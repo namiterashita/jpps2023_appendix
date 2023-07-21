@@ -1,1 +1,37 @@
 # Appendix: 女性団体の活動は福祉予算に影響を及ぼすのか――韓国・地方自治体の抗議イベントデータを用いた実証分析
+
+Do Women's Organizations' Activities Affect Welfare Budgets?: Empirical Analysis Using Protest Event Data from Local Governments in Korea
+
+---
+
+# Author
+
+* [寺下和宏](https://kazuhiroterashita.com/)（日本学術振興会特別研究員PD）
+
+---
+
+# Abstract
+
+本稿は、韓国における基礎自治体のパネルデータを用いて、女性団体の活動が自治体の福祉予算に与える影響を明らかにした。先行研究は、女性団体をはじめとする「女性」の利益を代表するアクターが政治過程に参加することで、福祉の拡充がもたらされると論じてきた。この中で、女性団体はアウトサイダーとして、福祉拡充の世論形成に重要な役割を果たしつつ、時に労働団体や左派政党と連携して、政策起業家として福祉政策を主導してきたことが指摘されてきた。その一方で、先行研究では、女性団体と福祉政策の関係についてデータを用いた実証分析がほとんどなされてこなかった。そこで本稿では、韓国の基礎自治体の福祉予算の規定要因を分析し、女性団体の活動が福祉予算にいかなる影響を与えるのかを検討した。その際、機械学習を導入した抗議イベント分析を用いて、韓国語の新聞記事を分類することで、韓国各地の女性団体の活動に関する独自のデータを構築した。差の差法（DID）による分析の結果、女性団体の活動の有無が自治体の福祉予算に影響を与えるとは言えないが、進歩的な女性団体のみが抗議をしている場合か、女性・福祉に関するシグナルを発する抗議のみが観察される場合に、その2-3年後の人口一人当たり福祉予算が増加することが明らかになった。
+
+This paper uses panel data from local governments in Korea to examine the impact of the activities of women's organizations on the welfare budgets of local governments. Previous studies have argued that the participation of women's organizations and other women actors in the political process leads to welfare expansion. In this context, it has been pointed out that women's organizations, as outsiders, have played an important role in shaping public opinion in favor of welfare expansion, while at the same time acting as policy entrepreneurs, sometimes in cooperation with labor organizations and left-wing parties, in leading welfare policy. On the other hand, previous studies have rarely conducted empirical analyses using data on the relationship between women's organizations and welfare policy, and there has been a gap between theory and evidence. Therefore, this paper analyses the determinants of the welfare budgets of local governments in Korea and examines how the activities of women's groups affect welfare budgets. To do so, we constructed unique data on the activities of women's organizations in different regions of Korea by classifying newspaper articles in Korean using protest event analysis with the introduction of machine learning. Using the difference-in-differences (DID) method, we find that the presence or absence of women's organization activities does not affect a local government's welfare budget, but only when either only progressive women's organizations protest or only protests with signals about women and welfare are observed. 2-3 years later, welfare budgets per capita in the population were found to increase.
+
+---
+
+# 抗議イベント分析の詳細
+
+以下では、本稿で用いた抗議イベント分析の詳細について述べる。本稿ではアドボカシー（坂本編 2017）の定義を採用することで、デモや集会といった「抗議」という言葉で連想される典型的なレパートリーだけでなく、政治・社会に影響を及ぼす可能性のある女性団体の多様な抗議のあり方を捉えている。また、対象は、韓国における首都圏で行われた抗議はもちろん、地方で行われたイベントも含めている。期間は、後述するデータベースの制約から1990年1月1日以降2021年12月31日までの32年間としているが、分析に用いたのはこのうち2010年から2020年までの11年間のみである。そして、対象とした団体は女性団体である。
+抗議イベント分析に必要な段階は以下の3つである。第1に、ソースとなる新聞記事の検索と収集である。第2に、新聞記事の分類とコーディングである。第3に、データの確認である。以下では、各手順について述べる。
+
+## 新聞記事を収集する
+本稿では、抗議イベント分析に用いる新聞記事の検索と抽出を以下のように行った。
+まず、利用するデータベースは韓国の主要新聞（全国紙・地方紙・専門紙を含む）の記事が閲覧・利用可能な[BIGKinds](https://www.bigkinds.or.kr/)である。BIGKindsは、日本国内の主要新聞のデータベースと同様に、日時や媒体、キーワード、掲載面などを指定して、収録されている新聞記事の検索を行うことが可能である。他方で、日本で新聞社が独自に提供するサービスとは異なり、掲載新聞の横断検索や基本的なキーワード分析などを無料で提供している点でメリットがある。本稿ではBIGKindsを用いて、新聞記事を検索後、記事データをダウンロードして利用した。
+次に、抗議イベント分析が対象とする媒体を検討する。先行研究はさまざまなメディア・カヴァレッジに対応するために、複数の媒体を用いることを推奨してきた。そこで本稿では、BIGKindsに収録された複数の全国紙（4紙）および地方紙（13紙）を用いて分析を行う。具体的には、東亜日報、朝鮮日報、中央日報、ハンギョレ、江原日報、京畿日報、慶南新聞、光州日報、国際新聞、大田日報、毎日新聞、釜山日報、蔚山毎日、全南日報、全北日報、忠清日報、漢拏日報の17紙である 。全国紙は発行部数が多い4大新聞のみを用いている。ただし、このように複数の媒体を用いると、1つのイベントに対する複数の新聞記事・報道の重複が増加する。この重複については、後述する分析のテクニックで除去する。
+次に、選定した媒体のうち、必要な記事を検索するための検索語を検討する。検索語は、抗議を示す語（デモ、集会など）と、団体や業界を示す語（女性団体、環境団体など）の2つが考えられるが、本稿では、女性団体の抗議イベントを明らかにすることを目的としているため、団体や業界を示す検索語を用いた。具体的には、以下の通りである。
+
+"女性団体"OR"女性団体"OR"女性運動"OR"女性 運動"OR"女性界"OR"女性人権団体"OR"女性人権 団体"OR"女性主義 団体" OR"フェミニズム 団体"OR"女性主義 運動"OR"フェミニズム 運動"OR"性的少数者団体"OR"性的少数者 団体"OR"性平等 団体"OR"性平等 運動"OR"反性暴力団体"OR"反性暴力 団体" OR"反性暴力運動" OR"反性暴力 運動" OR "女性労働団体"OR"女性労働 団体"OR"女性労働運動" OR"女性労働 運動" OR"女性農民団体" OR"女性農民 団体" OR "女性農民運動" OR"女性農民 運動" OR "韓国女性団体連合"OR"女性団体連合"OR"韓国女性団体協議会"OR"女性団体協議会"OR"YWCA"OR"民友会"OR"女性民友会"OR"女性 民友会"OR"韓国女性民友会"
+
+期間は、BIGKindsの収録記事の始点である1990年1月1日から2021年12月31日までとした。ただし、重複記事と社説、国際面ニュースは除いた。この他「特集」記事が推定結果に影響を及ぼす可能性があるが、本稿の分析では「特集」記事においても抗議イベントが報じられる可能性を考慮し、「特集」記事を含めて分析を行った。この結果、収集した新聞記事は72,855件であった。
+
+
+
