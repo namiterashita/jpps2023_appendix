@@ -1,8 +1,15 @@
-# Appendix: 女性団体の活動は福祉予算に影響を及ぼすのか――韓国・地方自治体の抗議イベントデータを用いた実証分析
+# Appendix: 女性団体の活動は福祉予算に影響を及ぼすのか：韓国・地方自治体の抗議イベントデータを用いた実証分析
 
 『公共政策研究』(23):頁数未定
 
 Do Women's Organizations' Activities Affect Welfare Budgets?: Empirical Analysis Using Protest Event Data from Local Governments in Korea
+
+
+---
+
+# Author
+
+* [寺下和宏](https://kazuhiroterashita.com/)（京都大学大学院法学研究科特定研究員/日本学術振興会特別研究員PD）
 
 ---
 
@@ -10,11 +17,6 @@ Do Women's Organizations' Activities Affect Welfare Budgets?: Empirical Analysis
 
 [PDF](https://kazuhiroterashita.com/jpps2023_appendix/jpps2023_Appendix.pdf)
 
----
-
-# Author
-
-* [寺下和宏](https://kazuhiroterashita.com/)（日本学術振興会特別研究員PD）
 
 ---
 
