@@ -6,6 +6,12 @@ Do Women's Organizations' Activities Affect Welfare Budgets?: Empirical Analysis
 
 ---
 
+# File
+
+[PDF]()
+
+---
+
 # Author
 
 * [寺下和宏](https://kazuhiroterashita.com/)（日本学術振興会特別研究員PD）
