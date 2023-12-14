@@ -8,7 +8,7 @@ Do Women's Organizations' Activities Affect Welfare Budgets?: Empirical Analysis
 
 # File
 
-[PDF]()
+[PDF](https://github.com/namiterashita/jpps2023_appendix/jpps2023_Appendix.pdf)
 
 ---
 
